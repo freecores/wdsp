@@ -142,10 +142,10 @@ begin
 											--DAT_O(M-1 downto 0)<= h0_aux(to_integer(unsigned(ADR_I(7 downto 0))-Reg_coef)/4);  
 											--DAT_O(Data_wordwidth-1 downto M)<=(others => h0_aux(to_integer(unsigned(ADR_I(7 downto 0))-Reg_coef)/4)(M-1) );  
 											
-											--DAT_O<=ssDAT_O;
+											DAT_O<=ssDAT_O;
 											
-											DAT_O(M-1 downto 0)<= gains;  
-											DAT_O(Data_wordwidth-1 downto M)<=(others => gains(M-1) );  
+											--DAT_O(M-1 downto 0)<= gains;  
+											--DAT_O(Data_wordwidth-1 downto M)<=(others => gains(M-1) );  
 											
 											
 											

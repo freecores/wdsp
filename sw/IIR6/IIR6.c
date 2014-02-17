@@ -127,6 +127,10 @@ int c,k,j,r_in,r_out;
     for (k=0;k<(6*NSECT);k++){
         	REG32(IIR_BASE+IIR_COEFF+(k*4))=(int)SOS[k];
 		r_out=REG32(IIR_BASE+IIR_COEFF+(k*4));
+int10_to_str(r_out,str,-10);
+	   	uart_print_str(str);
+			uart_putc(' ');
+
 
     }
 
@@ -140,10 +144,7 @@ uart_print_str("IIR filter impulse response :\n ");
 		REG32(IIR_BASE+IIR_STATUS)=1;
 
 
-                //Waits for filtering 
-		while(REG32(IIR_BASE+IIR_STATUS)==0) ;
-		REG32(IIR_BASE+IIR_STATUS)=1;
-
+          
 //Reads filter output
 r_out=REG32(IIR_BASE+IIR_DATA);
 		int10_to_str(r_out,str,-10);

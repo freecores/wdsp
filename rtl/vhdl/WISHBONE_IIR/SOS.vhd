@@ -85,7 +85,7 @@ filter_coef<=h0;
 myfilter: 
 	for k in NSECT-1 downto 0 generate
 	
-filter:Tworder
+filter: entity work.Tworder(typeIII)
 		generic map(
 						WordWidth=>WordWidth,
 						Bit_growth=>Bit_growth,

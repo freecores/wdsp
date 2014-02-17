@@ -100,7 +100,7 @@ signal gain_aux:std_logic_vector(M-1 downto 0);
 signal iir_data_in, iir_data_out:std_logic_vector(Filter_Width+Bit_Growth-1 downto 0);
 signal en_out_aux:std_logic_vector(3 downto 0);
 signal Start_aux, WE_O_aux,enable_aux:std_logic;
-signal sext:std_logic_vector(bit_growth-1 downto 0);
+signal sext:std_logic_vector(WB_Width-Filter_Width-bit_growth-1 downto 0);
 begin
 sext<=(others=>iir_data_out(Filter_Width-1));
 
